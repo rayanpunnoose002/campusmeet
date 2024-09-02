@@ -76,7 +76,7 @@ auth.onAuthStateChanged((user) => {
         .then((docRef) => {
           Swal.fire({
             title: "success",
-            text: "order successfully placed",
+            text: "Regisration Sucessfull",
             icon: "success",
             confirmButtonText: "continue",
           });
