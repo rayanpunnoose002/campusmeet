@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <title>Registration Form</title>
+    <!-- <link rel="stylesheet" href="main.css"> -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .animate-gradient {
+            background: linear-gradient(-45deg, #000000, #000000, #000000, #000000);
+            background-size: 400% 400%;
+            animation: gradient 3s ease infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        #registerBtn {
+            animation: pulse 2s infinite;
+        }
+
+        .centered-container {
+            display: flex;
+            justify-content: center;
+            /* Centers the image horizontally */
+            align-items: center;
+            /* Centers the image vertically (if needed) */
+            /* height: 10vh; */
+            /* Adjust height if needed or remove if not necessary */
+        }
+
+        .responsive-img {
+            max-width: 20%;
+            height: auto;
+            /* Ensures the image scales with its container and maintains aspect ratio */
+            display: block;
+            /* Removes bottom whitespace */
+            margin-left: auto;
+            margin-right: auto;
+            /* Centers the image horizontally */
+        }
+
+        /* Optional: Fine-tuning for smaller devices */
+        @media (max-width: 768px) {
+            .responsive-img {
+                max-width: 50%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .responsive-img {
+                max-width: 60%;
+            }
+        }
+
+        .responsive-foot {
+            max-width: 10%;
+            height: auto;
+            /* Ensures the image scales with its container and maintains aspect ratio */
+            display: block;
+            /* Removes bottom whitespace */
+            margin-left: auto;
+            margin-right: auto;
+            /* Centers the image horizontally */
+        }
+
+        /* Optional: Fine-tuning for smaller devices */
+        @media (max-width: 768px) {
+            .responsive-foot {
+                max-width: 30%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .responsive-foot {
+                max-width: 30%;
+            }
+        }
+
+        .responsive-jy {
+            max-width: 2.5%;
+            height: auto;
+            /* Ensures the image scales with its container and maintains aspect ratio */
+            display: block;
+            /* Removes bottom whitespace */
+            margin-left: auto;
+            margin-right: auto;
+            /* Centers the image horizontally */
+        }
+
+        /* Optional: Fine-tuning for smaller devices */
+        @media (max-width: 768px) {
+            .responsive-jy {
+                max-width: 6%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .responsive-jy {
+                max-width: 10%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="bg-black dark:bg-black-900 min-h-screen flex items-center justify-center">
+        <div class="w-full max-w-2xl px-6 py-8 mx-auto space-y-6">
+            <div class="mt-0 centered-container">
+                <img src="logo.png" alt="Description of the image" class="responsive-img">
+            </div>
+            <h1 class="text-3xl font-bold leading-tight tracking-tight text-yellow-400 text-center">
+                CAMPUS MEET' 24 REGISTRATION
+            </h1>
+            <div class="container mx-auto"></div>
+            <form id="registration-form"
+                action="https://script.google.com/macros/s/AKfycbzLzrCRisynkeOSemIPbKRv1gZUSPvDdigkon8bPrF80xN27y9OZPkPAzrMpUbxpuXJdg/exec"
+                method="post" class="space-y-6">
+                <div>
+                    <label for="name" class="block mb-2 text-lg font-medium text-gray-900 dark:text-white">
+                        Full Name <span class="text-red-500">*</span>
+                    </label>
+                    <input type="text" name="name" id="name"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-md focus:ring-primary-500 focus:border-primary-500 block w-full p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-yellow-500 dark:focus:border-yellow-500"
+                        placeholder="Enter your Full Name" required>
+                </div>
+                <div>
+                    <label class="block mb-2 text-lg font-medium text-gray-900 dark:text-white">
+                        Gender <span class="text-red-500">*</span>
+                    </label>
+                    <div class="flex flex-col space-y-4 mt-4 ml-4">
+                        <div>
+                            <input type="radio" name="gender" id="male" value="Male" style="width: 16px; height: 16px"
+                            class="mr-2 w-4 h-4 text-yellow-500 bg-white-100 border-white-300 focus:ring-yellow-500 focus:border-yellow-500 dark:bg-white-700 dark:border-gray-600 dark:focus:ring-yellow-500 dark:ring-offset-gray-800 checked:bg-yellow-500 checked:border-yellow-500" required>
+                            <label for="male" class="text-base font-medium text-gray-900 dark:text-white">Male</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="gender" id="female" value="Female"
+                                style="width: 16px; height: 16px" class="mr-2 w-4 h-4 text-yellow-500 bg-white-100 border-white-300 focus:ring-yellow-500 focus:border-yellow-500 dark:bg-white-700 dark:border-gray-600 dark:focus:ring-yellow-500 dark:ring-offset-gray-800 checked:bg-yellow-500 checked:border-yellow-500" required>
+                            <label for="female"
+                                class="text-base font-medium text-gray-900 dark:text-white">Female</label>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <label for="contact-number" class="block mb-2 text-lg font-medium text-gray-900 dark:text-white">
+                        Contact Number <span class="text-red-500">*</span>
+                    </label>
+                    <input type="tel" name="contact-number" id="contact-number"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-md focus:ring-primary-500 focus:border-primary-500 block w-full p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-yellow-500 dark:focus:border-yellow-500"
+                        placeholder="+91 12345 67890" required>
+                </div>
+                <div>
+                    <label for="email" class="block mb-2 text-lg font-medium text-gray-900 dark:text-white">
+                        Email <span class="text-red-500">*</span>
+                    </label>
+                    <input type="email" name="email" id="email"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-md focus:ring-primary-500 focus:border-primary-500 block w-full p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-yellow-500 dark:focus:border-yellow-500"
+                        placeholder="abc@gmail.com" required>
+                </div>
+                <div>
+                    <label for="address" class="block mb-2 text-lg font-medium text-gray-900 dark:text-white">
+                        Address <span class="text-red-500">*</span>
+                    </label>
+                    <textarea name="address" id="address"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-md focus:ring-primary-500 focus:border-primary-500 block w-full p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-yellow-500 dark:focus:border-yellow-500"
+                        placeholder="Enter your Address" required></textarea>
+                </div>
+                <div>
+                    <label for="college" class="block mb-2 text-lg font-medium text-gray-900 dark:text-white">
+                        College <span class="text-red-500">*</span>
+                    </label>
+                    <input type="text" name="college" id="college"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-md focus:ring-primary-500 focus:border-primary-500 block w-full p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-yellow-500 dark:focus:border-yellow-500"
+                        placeholder="Enter Full Name of College with Place (SB College, Changanacherry)" required>
+                </div>
+                <div>
+                    <label for="course" class="block mb-2 text-lg font-medium text-gray-900 dark:text-white">
+                        Course <span class="text-red-500">*</span>
+                    </label>
+                    <input type="text" name="course" id="course"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-md focus:ring-primary-500 focus:border-primary-500 block w-full p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-yellow-500 dark:focus:border-yellow-500"
+                        placeholder="Specify Course with Branch (B.Tech in Computer Science)" required>
+                </div>
+                <div>
+                    <label class="block mb-2 text-lg font-medium text-gray-900 dark:text-white">
+                        Year of Study <span class="text-red-500">*</span>
+                    </label>
+                    <div class="flex flex-col space-y-4 mt-4 ml-4">
+                        <div>
+                            <input type="radio" name="year" id="first-year" value="1st Year" class="mr-2 w-4 h-4 text-yellow-500 bg-white-100 border-white-300 focus:ring-yellow-500 focus:border-yellow-500 dark:bg-white-700 dark:border-gray-600 dark:focus:ring-yellow-500 dark:ring-offset-gray-800 checked:bg-yellow-500 checked:border-yellow-500"
+                                style="width: 16px; height: 16px" class="mr-2" required>
+                            <label for="first-year" class="text-base font-medium text-gray-900 dark:text-white">1st
+                                Year</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="year" id="second-year" value="2nd Year" class="mr-2 w-4 h-4 text-yellow-500 bg-white-100 border-white-300 focus:ring-yellow-500 focus:border-yellow-500 dark:bg-white-700 dark:border-gray-600 dark:focus:ring-yellow-500 dark:ring-offset-gray-800 checked:bg-yellow-500 checked:border-yellow-500"
+                                style="width: 16px; height: 16px" class="mr-2" required>
+                            <label for="second-year" class="text-base font-medium text-gray-900 dark:text-white">2nd
+                                Year</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="year" id="third-year" value="3rd Year" class="mr-2 w-4 h-4 text-yellow-500 bg-white-100 border-white-300 focus:ring-yellow-500 focus:border-yellow-500 dark:bg-white-700 dark:border-gray-600 dark:focus:ring-yellow-500 dark:ring-offset-gray-800 checked:bg-yellow-500 checked:border-yellow-500"
+                                style="width: 16px; height: 16px" class="mr-2" required>
+                            <label for="third-year" class="text-base font-medium text-gray-900 dark:text-white">3rd
+                                Year</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="year" id="fourth-year" value="4th Year" class="mr-2 w-4 h-4 text-yellow-500 bg-white-100 border-white-300 focus:ring-yellow-500 focus:border-yellow-500 dark:bg-white-700 dark:border-gray-600 dark:focus:ring-yellow-500 dark:ring-offset-gray-800 checked:bg-yellow-500 checked:border-yellow-500"
+                                style="width: 16px; height: 16px" class="mr-2" required>
+                            <label for="fourth-year" class="text-base font-medium text-gray-900 dark:text-white">4th
+                                Year</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="year" id="fifth-year" value="5th Year" class="mr-2 w-4 h-4 text-yellow-500 bg-white-100 border-white-300 focus:ring-yellow-500 focus:border-yellow-500 dark:bg-white-700 dark:border-gray-600 dark:focus:ring-yellow-500 dark:ring-offset-gray-800 checked:bg-yellow-500 checked:border-yellow-500"
+                                style="width: 16px; height: 16px" class="mr-2" required>
+                            <label for="fifth-year" class="text-base font-medium text-gray-900 dark:text-white">5th
+                                Year</label>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <label class="block mb-2 text-lg font-medium text-gray-900 dark:text-white">
+                        Zone <span class="text-red-500">*</span>
+                    </label>
+                    <div class="flex flex-col space-y-4 mt-4 ml-4">
+                        <div>
+                            <input type="radio" name="zone" id="zone1" value="Changanacherry" class="mr-2 w-4 h-4 text-yellow-500 bg-white-100 border-white-300 focus:ring-yellow-500 focus:border-yellow-500 dark:bg-white-700 dark:border-gray-600 dark:focus:ring-yellow-500 dark:ring-offset-gray-800 checked:bg-yellow-500 checked:border-yellow-500"
+                                style="width: 16px; height: 16px" class="mr-2" required>
+                            <label for="zone1"
+                                class="text-base font-medium text-gray-900 dark:text-white">Changanacherry</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="zone" id="other-zone" value="Other Zone" class="mr-2 w-4 h-4 text-yellow-500 bg-white-100 border-white-300 focus:ring-yellow-500 focus:border-yellow-500 dark:bg-white-700 dark:border-gray-600 dark:focus:ring-yellow-500 dark:ring-offset-gray-800 checked:bg-yellow-500 checked:border-yellow-500"
+                                style="width: 16px; height: 16px" class="mr-2" onclick="toggleOtherZoneInput()"
+                                required>
+                            <label for="other-zone"
+                                class="text-base font-medium text-gray-900 dark:text-white">Others</label>
+                        </div>
+                    </div>
+                    <div id="other-zone-input" class="mt-2 hidden">
+                        <label for="other-zone-text"
+                            class="block mb-2 text-lg font-medium text-gray-900 dark:text-white">
+                            Please specify the Zone:
+                        </label>
+
+                        <select name="otherZone" id="zoneDropdown" id="other-zone-input"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-md focus:ring-yellow-500 focus:border-yellow-500 block w-full p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-yellow-500 dark:focus:border-yellow-500">>
+                         <div>   
+                            <option value="">Select Zone</option>
+                            <option name="otherZone" value="Neyyattinkara">Neyyattinkara</option>
+                            <option name="otherZone" value="Trivandrum">Trivandrum</option>
+                            <option name="otherZone" value="Kollam">Kollam</option>
+                            <option name="otherZone" value="Punaloor">Punaloor</option>
+                            <option name="otherZone" value="Cherthala">Cherthala</option>
+                            <option name="otherZone" value="Alappuzha">Alappuzha</option>
+                            <option name="otherZone" value="Kottayam">Kottayam</option>
+                            <option name="otherZone" value="Pala">Pala</option>
+                            <option name="otherZone" value="Kanjirappally">Kanjirappally</option>
+                            <option name="otherZone" value="Kattapana">Kattapana</option>
+                            <option name="otherZone" value="Idukki">Idukki</option>
+                            <option name="otherZone" value="Kothamangalam">Kothamangalam</option>
+                            <option name="otherZone" value="Ernakulam">Ernakulam</option>
+                            <option name="otherZone" value="Angamaly">Angamaly</option>
+                            <option name="otherZone" value="Irinjalakuda">Irinjalakuda</option>
+                            <option name="otherZone" value="Thrissur">Thrissur</option>
+                            <option name="otherZone" value="Palakkad">Palakkad</option>
+                            <option name="otherZone" value="Kozhikode">Kozhikode</option>
+                            <option name="otherZone" value="Mananthavady">Mananthavady</option>
+                            <option name="otherZone" value="Thalaserry">Thalaserry</option>
+                            <option name="otherZone" value="Kannur">Kannur</option>
+                            <option name="otherZone" value="Kasargod">Kasargod</option>
+                        </div>
+                        </select>
+                    </div>
+                </div>
+                <div class="mt-8">
+                    <button id="registerBtn" type="submit"
+                        class="w-full text-black bg-yellow-400 hover:bg-yellow-400 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-5 py-2.5 text-center dark:bg-yellow-400 dark:hover:bg-yellow-500 dark:focus:ring-yellow-800 inline-flex items-center justify-center transition-all duration-300 ease-in-out">
+                        <span id="buttonText" class="relative z-10">Register</span>
+                        <span id="loadingContainer"
+                            class="absolute inset-0 flex items-center justify-center w-full text-black bg-yellow-400 hover:bg-yellow-400 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-5 py-2.5 text-center dark:bg-yellow-400 dark:hover:bg-yellow-500 dark:focus:ring-yellow-800 inline-flex opacity-0 transition-opacity duration-300">
+                            <svg class="animate-spin h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                                    stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor"
+                                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                                </path>
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+            </form>
+        </div>
+        </div>
+    </section>
+
+    <footer class="p-4 bg-black md:p-8 lg:p-10">
+        <div class="mx-auto max-w-screen-xl text-center">
+            <div class="">
+                <img src="logo.png" alt="Description of the image" class="responsive-foot">
+            </div>
+            <p class="my-6 text-white mt-6 mb-4 text-3xl font-regular tracking-tight leading-none md:text-4xl lg:text-2xl text-center">Contact Us</p>
+
+<hr class="w-48 border-t-2 border-yellow-400 mx-auto my-4">
+
+<div class="flex flex-col lg:flex-row justify-center items-center space-y-4 lg:space-y-0 lg:space-x-6">
+    <!-- Contact 1 -->
+    <div class="text-white text-lg lg:text-base text-center">
+        <p>Fr. Aby Vadakumthala</p>
+        <p><a href="tel:+919495643763" class="text-yellow-400 hover:underline">9495643763</a></p>
+    </div>
+
+    <!-- Contact 2 -->
+    <div class="text-white text-lg lg:text-base text-center">
+        <p>Tom Mathew</p>
+        <p><a href="tel:+918138009028" class="text-yellow-400 hover:underline">8138009028</a></p>
+    </div>
+
+    <!-- Contact 3 -->
+    <div class="text-white text-lg lg:text-base text-center">
+        <p>Abin Mathew</p>
+        <p><a href="tel:+918848185966" class="text-yellow-400 hover:underline">8848185966</a></p>
+    </div>
+
+    <!-- Contact 4 -->
+    <div class="text-white text-lg lg:text-base text-center">
+        <p>Bennit Antony</p>
+        <p><a href="tel:+919526787543" class="text-yellow-400 hover:underline">9526787543</a></p>
+    </div>
+</div>
+
+
+
+
+<div class="mt-8">
+    <img src="jy.png" alt="Description of the image" class="responsive-jy">
+</div>
+<div class="mt-2">
+            <span class="text-sm text-white sm:text-center text-white">Copyright © Changanacherry Campus
+                Ministry - All Rights Reserved.</span>
+        </div>
+        </div>
+    </footer>
+
+    <!-- Main modal -->
+    <div id="successModal" tabindex="-1" aria-hidden="true"
+        class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 flex justify-center items-center w-full h-full bg-black bg-opacity-50 backdrop-blur-sm">
+        <div class="p-6 rounded-lg shadow-lg w-full max-w-md mx-4 sm:mx-0">
+            <div class="relative p-4 w-full max-w-md h-full md:h-auto">
+                <!-- Modal content -->
+                <div class="relative p-4 text-center bg-white rounded-lg shadow dark:bg-gray-800 sm:p-5">
+                    <div
+                        class="w-12 h-12 rounded-full bg-green-100 dark:bg-green-900 p-2 flex items-center justify-center mx-auto mb-3.5">
+                        <svg aria-hidden="true" class="w-8 h-8 text-green-500 dark:text-green-400" fill="currentColor"
+                            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="sr-only">Success</span>
+                    </div>
+                    <p class="mb-4 text-lg font-semibold text-gray-900 dark:text-white">Registration Successfull</p>
+                    <button id="continueButton" type="button"
+                        class="py-2 px-3 text-sm font-medium text-center text-black rounded-lg bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:focus:ring-yellow-500">
+                        Continue
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function (event) {
+            document.getElementById('successButton').click();
+        });
+    </script>
+
+    <script>
+        function toggleOtherZoneInput() {
+            var otherZoneRadio = document.getElementById('other-zone');
+            var textInput = document.getElementById('other-zone-input');
+            if (otherZoneRadio.checked) {
+                textInput.classList.remove('hidden');
+                zoneDropdown.required = true;
+            } else {
+                textInput.classList.add('hidden');
+                zoneDropdown.required = false;
+                zoneDropdown.value = '';
+            }
+        }
+
+        // Ensure the text input field is hidden when other options are selected
+        document.querySelectorAll('input[name="zone"]').forEach(function (radio) {
+            radio.addEventListener('change', function () {
+                if (this.id !== 'other-zone') {
+                    document.getElementById('other-zone-input').classList.add('hidden');
+                }
+            });
+        });
+    </script>
+
+    <script>
+        const form = document.getElementById('registration-form');
+        const registerBtn = document.getElementById('registerBtn');
+        const buttonText = document.getElementById('buttonText');
+        const loadingContainer = document.getElementById('loadingContainer');
+
+        function setLoading(isLoading) {
+            if (isLoading) {
+                registerBtn.disabled = true;
+                registerBtn.classList.add('animate-gradient', 'cursor-not-allowed');
+                registerBtn.classList.remove('bg-yellow-400', 'hover:bg-yellow-500');
+                buttonText.classList.add('opacity-0');
+                loadingContainer.classList.remove('opacity-0');
+                setTimeout(() => {
+                    buttonText.textContent = 'Registering...';
+                    buttonText.classList.remove('opacity-0');
+                }, 200);
+            } else {
+                registerBtn.disabled = false;
+                registerBtn.classList.remove('animate-gradient', 'cursor-not-allowed');
+                registerBtn.classList.add('bg-yellow-400', 'hover:bg-yellow-500');
+                buttonText.classList.add('opacity-0');
+                loadingContainer.classList.add('opacity-0');
+                setTimeout(() => {
+                    buttonText.textContent = 'Register';
+                    buttonText.classList.remove('opacity-0');
+                }, 200);
+            }
+        }
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            setLoading(true);
+
+            var formData = new FormData(form);
+
+            fetch(form.action, {
+                method: form.method,
+                body: formData
+            })
+                .then(response => response.text())
+                .then(result => {
+                    console.log(result);
+                    if (result === "Success") {
+                        document.getElementById("successModal").classList.remove("hidden");
+                    } else {
+                        alert("Registration failed. Please try again.");
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert("An error occurred. Please try again.");
+                })
+                .finally(() => {
+                    setLoading(false);
+                });
+        });
+    </script>
+
+    <script>
+        document.getElementById('continueButton').addEventListener('click', function () {
+            // Close the modal
+            document.getElementById('successModal').classList.add('hidden');
+
+            // Redirect to the next page
+            // Replace 'next-page.html' with the actual URL of the page you want to redirect to
+            window.location.href = 'index.html';
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
+
+    <script>
+        document.getElementById('zoneDropdown').addEventListener('change', function () {
+            var otherZone = document.getElementById('otherZone');
+            if (this.value === 'Other') {
+                otherZone.style.display = 'block';
+            } else {
+                otherZone.style.display = 'none';
+                otherZone.value = '';
+            }
+        });
+    </script>
+
+</body>
+
+</html>

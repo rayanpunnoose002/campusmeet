@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Export Firestore Data to Excel</title>
+    <!-- Firebase App (the core Firebase SDK) -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-auth.js"></script>
+    <!-- SheetJS (xlsx) for Excel export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+</head>
+<body>
+    <h1>Export Firestore Data to Excel</h1>
+    <button onclick="exportFirestoreData()">Export Data</button>
+
+    <script>
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCmCq7z9NosZvMrnDMY5UWhbK8opQk96gs",
+    authDomain: "campusmeet24.firebaseapp.com",
+    projectId: "campusmeet24",
+    storageBucket: "campusmeet24.appspot.com",
+    messagingSenderId: "908655074403",
+    appId: "1:908655074403:web:a96cc97641be42fc6eec56",
+    measurementId: "G-R310K456T6"
+        };
+
+        // Initialize Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        // Function to fetch Firestore data and export to Excel
+        function exportFirestoreData() {
+            db.collection("ideas").get().then((querySnapshot) => {
+                const data = [];
+                querySnapshot.forEach((doc) => {
+                    data.push(doc.data());
+                });
+
+                // Call the function to export data to Excel
+                exportToExcel(data);
+            }).catch((error) => {
+                console.error("Error fetching data: ", error);
+            });
+        }
+
+        // Function to export JSON data to Excel using SheetJS
+        function exportToExcel(data) {
+            // Create a new workbook
+            const wb = XLSX.utils.book_new();
+
+            // Convert the JSON data to a worksheet
+            const ws = XLSX.utils.json_to_sheet(data);
+
+            // Append the worksheet to the workbook
+            XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
+
+            // Export the workbook as an Excel file
+            XLSX.writeFile(wb, "FirestoreData.xlsx");
+        }
+    </script>
+</body>
+</html>
